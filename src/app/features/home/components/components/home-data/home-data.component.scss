@@ -1,0 +1,58 @@
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.banner_content {
+    position: relative;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.des_banner {
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    text-align: left;
+    z-index: 5;
+}
+
+.hotdeals-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotdeals-heading {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hotdeals-img {
+    position: relative;
+}
+
+
+.hotdeals-img>span {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    background: #317ece;
+    color: white;
+    font-size: 14px;
+    line-height: 25px;
+    height: 26px;
+    min-width: 50px;
+    padding: 0 8px;
+    z-index: 3;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 3px;
+    text-transform: capitalize;
+}

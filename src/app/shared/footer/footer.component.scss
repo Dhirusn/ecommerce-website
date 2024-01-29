@@ -1,0 +1,131 @@
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.owl-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-stage {
+    display: flex;
+}
+
+.footer-container {
+    display: flex;
+    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailblock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: #666;
+        font-size: 14px;
+        text-transform: none;
+        margin-bottom: 0;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.emailblock>form {
+    display: flex;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    ;
+}
+
+.social-link li {
+    list-style: none;
+    height: 41px;
+    width: 41px;
+    background-color: white;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 10px;
+    border: none;
+    background: #fff;
+    border-radius: 3px;
+    line-height: 41px;
+    text-align: center;
+    margin: 0 10px 0 0;
+    float: left;
+    cursor: pointer;
+}
+
+.social-link>li>a {
+    color: gray;
+}
+
+.social-link>li>a:hover {
+    color: white;
+}
+
+.social-link>li:hover {
+    background: blue;
+}
+
+
+.social-link>li:hover>a {
+    color: white;
+}
+
+.contact {
+    padding-top: 50px ;
+
+
+    a {
+        text-decoration: none;
+        color: #666;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 36px;
+    }
+
+    h5 {
+        font-size: 18px;
+        color: #333;
+        line-height: 1;
+        text-transform: uppercase;
+        position: relative;
+        font-weight: 700;
+        margin-bottom: 14px;
+        border-bottom: none;
+        display: inline-block;
+        cursor: pointer;
+        width: auto;
+    }
+}
+
+.copyright-div{
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ced4da;
+}
+
+.copyright{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

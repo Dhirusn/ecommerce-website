@@ -1,0 +1,371 @@
+<ng-container class="d-flex justify-content-center">
+    <nav class="navbar header-nav" style="z-index: 99999;">
+        <div class="container-lg">
+            <div class="nav-left mt-2">
+                <div id="header_contact_link">
+                    <div id="contact-link">
+                        <ul>
+                            <li class="contact_phone">
+                                <i class="bi bi-telephone"></i>
+                                Call us free: <span>000-943-446-000</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope-fill"></i>
+                                Email: <span>salesyoursite.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div id="_desktop_user_info" class="mobile_links-wrapper">
+                    <div class="mobile_links dropdown js-dropdown">
+                        <span class="expand-more" data-toggle="dropdown" (click)="showMyAccount()"
+                            aria-expanded="false"><i class="bi bi-person-fill"></i>My Account<i
+                                class="fa fa-caret-down"></i></span>
+                        <ul class="dropdown-menu" id="myAccountDropdown" style="display: none;">
+                            <li class="nav-item">
+                                <a href="https://demo.fieldthemes.com/techo/demo1/en/contact-us" title="Contact us"
+                                    rel="nofollow">Contact us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="link-myaccount"
+                                    href="https://demo.fieldthemes.com/techo/demo1/en/cart?action=show" title="My Cart"
+                                    rel="nofollow">
+                                    My Cart
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="number-btn-compare"
+                                    href="https://demo.fieldthemes.com/techo/demo1/en/module/fieldcompare/FieldCompareProduct"
+                                    title="My Compare" rel="nofollow">
+                                    <span>My Compare</span><strong class="total-compare-val"></strong>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://demo.fieldthemes.com/techo/demo1/en/my-account"
+                                    title="Log in to your customer account" rel="nofollow">
+                                    <span>Sign in</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wishlist_nav2_1">
+                    <a class="wishtlist_nav2"
+                        href="https://demo.fieldthemes.com/techo/demo1/en/module/fieldblockwishlist/mywishlist">
+                        <i class="bi bi-heart"></i>My wishlist
+                    </a>
+                </div>
+                <div class="language-selector-wrapper" style="margin-left: 13px">
+                    <div class="language-selector dropdown js-dropdown">
+                        <span class="expand-more" data-toggle="dropdown">
+                            <img src="https://demo.fieldthemes.com/techo/demo1/img/l/1.jpg" alt="English" width="16"
+                                height="11">
+                            English<i class="bi bi-caret-down-fill"></i></span>
+                        <ul class="dropdown-menu">
+                            <li class="current">
+                                <a href="https://demo.fieldthemes.com/techo/demo1/en/" class="dropdown-item">
+                                    <img src="https://demo.fieldthemes.com/techo/demo1/img/l/1.jpg" alt="en" width="16"
+                                        height="11">
+                                    English
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://demo.fieldthemes.com/techo/demo1/es/" class="dropdown-item">
+                                    <img src="https://demo.fieldthemes.com/techo/demo1/img/l/3.jpg" alt="es" width="16"
+                                        height="11">
+                                    Español
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://demo.fieldthemes.com/techo/demo1/fr/" class="dropdown-item">
+                                    <img src="https://demo.fieldthemes.com/techo/demo1/img/l/6.jpg" alt="fr" width="16"
+                                        height="11">
+                                    Français
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://demo.fieldthemes.com/techo/demo1/it/" class="dropdown-item">
+                                    <img src="https://demo.fieldthemes.com/techo/demo1/img/l/7.jpg" alt="it" width="16"
+                                        height="11">
+                                    Italiano
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://demo.fieldthemes.com/techo/demo1/ar/" class="dropdown-item">
+                                    <img src="https://demo.fieldthemes.com/techo/demo1/img/l/8.jpg" alt="ar" width="16"
+                                        height="11">
+                                    اللغة العربية
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="currency-selector-wrapper">
+                    <div class="currency-selector dropdown js-dropdown">
+                        <span class="expand-more _gray-darker" data-toggle="dropdown">USD<i
+                                class="bi bi-caret-down-fill"></i></span>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a title="United Arab Emirates Dirham" rel="nofollow"
+                                    href="https://demo.fieldthemes.com/techo/demo1/en/?SubmitCurrency=1&amp;id_currency=3"
+                                    class="dropdown-item">AED AED</a>
+                            </li>
+                            <li>
+                                <a title="Euro" rel="nofollow"
+                                    href="https://demo.fieldthemes.com/techo/demo1/en/?SubmitCurrency=1&amp;id_currency=2"
+                                    class="dropdown-item">EUR €</a>
+                            </li>
+                            <li class="current">
+                                <a title="US Dollar" rel="nofollow"
+                                    href="https://demo.fieldthemes.com/techo/demo1/en/?SubmitCurrency=1&amp;id_currency=1"
+                                    class="dropdown-item">USD $</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-sm navbar-light mt-3" id="searchNavBar">
+        <div class="container">
+            <a class="navbar-brand ps-5" href="#"><img class="img-responsive logo"
+                    src="https://demo.fieldthemes.com/techo/demo1/img/techo-logo-1526634860.jpg"
+                    alt="Techo_Electronic_Home1"></a>
+            <div class="" id="collapsibleNavId">
+                <form class="d-flex my-2 my-lg-0">
+                    <select name="category_filter" id="category_filter" class="form-control">
+                        <option value="0" selected="selected">All categories</option>
+                        <option value="2">-- Home</option>
+                        <option value="10">
+                            ---- Chair
+                        </option>
+                        <option value="13">
+                            ------ Bakeware
+                        </option>
+                        <option value="15">
+                            -------- Home Brewing
+                        </option>
+                        <option value="16">
+                            -------- Table Linens
+                        </option>
+                        <option value="17">
+                            -------- Knife Accessories
+                        </option>
+                        <option value="18">
+                            -------- Utensils &amp; Gadgets
+                        </option>
+                        <option value="14">
+                            ------ Entertaining
+                        </option>
+                        <option value="19">
+                            -------- Equipment &amp; Supplies
+                        </option>
+                        <option value="20">
+                            -------- Home Brewing
+                        </option>
+                        <option value="21">
+                            -------- Knife Accessories
+                        </option>
+                        <option value="22">
+                            -------- Coffee
+                        </option>
+                        <option value="11">
+                            ---- Shop
+                        </option>
+                        <option value="12">
+                            ---- Electronic
+                        </option>
+                        <option value="23">
+                            ---- Computer - Laptop
+                        </option>
+                        <option value="26">
+                            ------ Men fashion
+                        </option>
+                        <option value="29">
+                            -------- Home Brewing
+                        </option>
+                        <option value="30">
+                            -------- Table Linens
+                        </option>
+                        <option value="31">
+                            -------- Knife Accessories
+                        </option>
+                        <option value="32">
+                            -------- Utensils &amp; Gadgets
+                        </option>
+                        <option value="27">
+                            ------ Women fashion
+                        </option>
+                        <option value="33">
+                            -------- Jewelry &amp; Watches
+                        </option>
+                        <option value="34">
+                            -------- Handbags &amp; Wallets
+                        </option>
+                        <option value="35">
+                            -------- Contemporary
+                        </option>
+                        <option value="36">
+                            -------- Juniors &amp; Maternity
+                        </option>
+                        <option value="28">
+                            ------ Kids Fashion
+                        </option>
+                        <option value="37">
+                            -------- Clothing
+                        </option>
+                        <option value="38">
+                            -------- Shoes
+                        </option>
+                        <option value="39">
+                            -------- Watches
+                        </option>
+                        <option value="40">
+                            -------- Accessories
+                        </option>
+                        <option value="24">
+                            ---- Electronics
+                        </option>
+                        <option value="41">
+                            ------ Living room
+                        </option>
+                        <option value="43">
+                            -------- Area Rugs &amp; Pads
+                        </option>
+                        <option value="44">
+                            -------- Artificial Plants
+                        </option>
+                        <option value="45">
+                            -------- Candles &amp; Holders
+                        </option>
+                        <option value="46">
+                            -------- Clocks
+                        </option>
+                        <option value="42">
+                            ------ Office furniture
+                        </option>
+                        <option value="47">
+                            -------- Area Rugs &amp; Pads
+                        </option>
+                        <option value="48">
+                            -------- Artificial Plants
+                        </option>
+                        <option value="49">
+                            -------- Candles &amp; Holders
+                        </option>
+                        <option value="50">
+                            -------- Clocks
+                        </option>
+                        <option value="25">
+                            ---- Smart phone &amp; Tablets
+                        </option>
+                        <option value="51">
+                            ---- Fashion &amp; Accessories
+                        </option>
+                        <option value="52">
+                            ---- Health &amp; Beauty
+                        </option>
+                        <option value="53">
+                            ---- Books &amp; Office
+                        </option>
+                        <option value="54">
+                            ---- Jewelry &amp; Watches
+                        </option>
+                        <option value="55">
+                            ---- Sport &amp; Outdoor
+                        </option>
+                        <option value="56">
+                            ---- Home &amp; Kitchen
+                        </option>
+                    </select><span></span>
+                    <input class="form-control" type="text" placeholder="Search" />
+                </form>
+                <div class="cart-detail">
+                    <button type="button" class="btn  position-relative">
+                        <i class="bi bi-bag"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                            99+
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+                    <span class="title_font text fw-bold">Cart: <span class="cart-total-top ps-2"> $0.00</span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div [style]="customStyle" class="header-bottom" id="main-navbar" style="z-index: 99999;">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <div class="container">
+                <button style="border-top-left-radius: 11px;border-bottom-left-radius:11px ;" (click)="allCategory()"
+                    id="allCategory" class="navbar-brand d-flex align-items-center" href="#"><span><i
+                            class="bi bi-list-ul" style="font-size: xx-large;"></i></span>
+                    <h3 class="title_font">All Categories</h3>
+                    <i class="bi bi-caret-down"></i>
+                </button>
+                <ul id="allCategory-items" class="menu-items">
+                    <li class="menu-item">HOME2</li>
+                    <li class="menu-item">HOME3</li>
+                    <li class="menu-item">HOME4</li>
+                </ul>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleFooterNavId" aria-controls="collapsibleFooterNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-flex-start" id="collapsibleFooterNavId">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Home <i class="bi bi-caret-down"></i></a>
+                            <ul class="menu-items">
+                                <li class="menu-item"><a>HOME2</a></li>
+                                <li class="menu-item"><a>HOME3</a></li>
+                                <li class="menu-item"><a>HOME4</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Chair <i class="bi bi-caret-down"></i></a>
+                            <ul class="menu-items">
+                                <li class="menu-item"><a>Chair 2</a></li>
+                                <li class="menu-item"><a>Chair 3</a></li>
+                                <li class="menu-item"><a>Chair 4</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Computer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Electronics <i
+                                    class="bi bi-caret-down"></i></a>
+                            <ul class="menu-items d-flex direction-row">
+                                <li class="menu-item">
+                                    <div class="title">
+                                        <h3>Cars</h3>
+                                    </div>
+                                    <ul>
+                                        <li class="menu-item"><a>Chair 3</a></li>
+                                        <li class="menu-item"><a>Chair 3</a></li>
+                                        <li class="menu-item"><a>Chair 3</a></li>
+                                        <li class="menu-item"><a>Chair 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="title">
+                                        <h3>Cars</h3>
+                                    </div>
+                                    <ul>
+                                        <li class="menu-item"><a>Car 3</a></li>
+                                        <li class="menu-item"><a>Car 4</a></li>
+                                        <li class="menu-item"><a>Car 5</a></li>
+                                        <li class="menu-item"><a>Car 6</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+</ng-container>
