@@ -56,3 +56,87 @@
     border-radius: 3px;
     text-transform: capitalize;
 }
+
+.price {
+    color: #317ece;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.regular-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 18px;
+    vertical-align: bottom;
+}
+
+.rating {
+    color: #ef8743;
+}
+
+.product-detail {
+    max-width: 25ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hotdeal-data {
+    text-align: center;
+    padding: 40px;
+}
+
+.item-countdown-time {
+    display: flex;
+    background-color: #317ece;
+    color: white;
+    font-size: 15px;
+    padding: 10px 5px;
+    gap: 20px;
+
+}
+
+.section_cout {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-buttons {
+    display: none;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    flex-direction: row;
+    top: 50%;
+    left: 30%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all 2s ease;
+}
+
+
+
+.product-buttons>button {
+    border: none;
+    color: blue;
+    background: transparent;
+}
+
+.hotdeals-item:hover {
+    .product-buttons {
+        display: flex;
+    }
+
+    .hotdeals-img {
+        opacity: 0.4;
+        transition: all 1s ease;
+    }
+}
