@@ -30,7 +30,7 @@
 
 .hotdeals-heading {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .hotdeals-img {
@@ -113,7 +113,7 @@
     position: absolute;
     flex-direction: row;
     top: 50%;
-    left: 30%;
+    left: 50%;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -135,8 +135,29 @@
         display: flex;
     }
 
-    .hotdeals-img {
+    .hotdeals-img>img {
         opacity: 0.4;
         transition: all 1s ease;
     }
+}
+
+.featured-product-container {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.featured-img {
+    position: relative;
+}
+
+.featured-img>img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.featured-data {
+    padding-top: 20px;
 }

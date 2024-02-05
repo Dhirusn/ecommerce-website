@@ -40,7 +40,6 @@ export class HeaderComponent {
     const element = document.getElementById(elementId);
     if (element) {
       const rect = element.getBoundingClientRect();
-      console.log(rect.height);
       if (window.scrollY > rect.height) {
         this.updateStyle()
       } else {

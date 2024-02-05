@@ -78,7 +78,7 @@
     </section>
     <section class="hotdeals-featured container mt-4">
         <div class="row">
-            <div class="hot-deals col-lg-3">
+            <div class="hot-deals col-lg-4 col-sm-12">
                 <div class="hotdeals-heading">
                     <h5>HOT DEALS</h5>
                     <div>
@@ -99,7 +99,8 @@
                                 style="width: 100%;">
                             <span>New</span>
                             <div class="product-buttons">
-                                <button class="add-to-cart"><i class="bi bi-bag-fill h3" ></i></button>
+                                <button class="add-to-cart" (click)="addToCart($event)"><i
+                                        class="bi bi-bag-fill h3"></i></button>
                                 <button class="add-to-wishlist"><i class="bi bi-heart-fill h3"></i></button>
                                 <button class="quick-view"><i class="bi bi-eye-fill h3"></i></button>
                             </div>
@@ -107,13 +108,7 @@
                         <div class="hotdeal-data">
                             <h5>Pising elitt amet, ispiscing</h5>
                             <h6 class="price">$152 <span class="regular-price">$190</span></h6>
-                            <div class="rating">
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                            </div>
+                            <span style="--rating:4"></span>
                             <p class="product-detail">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                 Exercitationem maxime, iusto saepe
                                 fuga numquam laborum? Dolore id recusandae magnam facere.</p>
@@ -134,15 +129,31 @@
                     </div>
                 </div>
             </div>
-            <div class="featured col-lg-3">
+            <div class="featured col-lg-8 col-sm-12">
                 <div class="featured-product">
                     <div class="hotdeals-heading">
                         <h5>Featured Product</h5>
                     </div>
                 </div>
                 <hr>
-                <div class="featured-product-container">
-
+                <div  class="featured-product-container">
+                    <div *ngFor="let item of featuredItemList" class="featured-item productContainer" id="{{item.itemId}}">
+                        <div class="featured-img p-2 productImageContainer">
+                            <img class="img-responsive" src="{{item.imgSrc}}" alt="images"
+                                style="width: 100%;">
+                            <div class="productsImageButtons">
+                                <button class="add-to-cart" (click)="addToCart($event)"><i class="bi bi-bag-fill"></i></button>
+                                <button class="add-to-wishlist"><i class="bi bi-heart-fill"></i></button>
+                                <button class="quick-view"><i class="bi bi-eye-fill"></i></button>
+                            </div>
+                        </div>
+                        <div class="featured-data text-center">
+                            <h5>{{item.itemTitle}}</h5>
+                            <h6 class="price">${{item.price}} <span class="regular-price">${{item.itemDiscountPrice}}</span></h6>
+                            <span style="--rating: {{item.itemRating}}"></span>
+                            <p class="product-detail">{{item.itemDetail}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
