@@ -11,16 +11,19 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ItemServiceService {
+  private url = "https://api.escuelajs.co/api/v1/products";
 
   constructor(private http: HttpClient) { }
 
   getFeaturedItems(){
-    var url = "https://fakestoreapi.com/products?limit=6";
-    return this.http.get(url);
+    return this.http.get(this.url + '?offset=0&limit=6');
   }
 
   getLatestProductItems(){
-    var url = "https://fakestoreapi.com/products";
-    return this.http.get(url);
+    return this.http.get(this.url + '?offset=8&limit=16');
+  }
+
+  getItemDetail(id:string){
+    return this.http.get(this.url+`/${id}`);
   }
 }

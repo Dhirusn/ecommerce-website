@@ -10,27 +10,50 @@ import { ItemModel } from '../../../../../models/entity';
 export class HomeDataComponent implements OnInit {
 
   public featuredItemList: ItemModel[] = [];
+  public todayDealItemList: ItemModel[] = [];
   constructor(private itemService: ItemServiceService) { }
 
   ngOnInit(): void {
     this.addFeaturedItemList();
+    this.TodayDealsItemList();
   }
 
   addFeaturedItemList() {
     this.itemService.getFeaturedItems().subscribe(res => {
       var result: any;
       result = res;
-      result.forEach((element: { id: any; image: any; description: any; category: any; title: any; price: any; rating: { rate: any; count: any; }; }) => {
+      console.log(result);
+      result.forEach((element: { id: any; images: any; description: any; category: any; title: any; price: any; creationAt: any; updatedAt: any }) => {
         this.featuredItemList.push({
-          itemId: element.id,
-          imgSrc: element.image,
-          itemDetail: element.description,
+          id: element.id,
+          images: element.images,
+          description: element.description,
           category: element.category,
-          itemTitle: element.title,
+          title: element.title,
           price: element.price,
-          itemRating: element.rating.rate,
-          ratingCount: element.rating.count,
-          itemDiscountPrice: 199
+          creationAt: element.creationAt,
+          updatedAt: element.updatedAt,
+          rating: 5
+        })
+      });
+    });
+  }
+
+  TodayDealsItemList() {
+    this.itemService.getLatestProductItems().subscribe(res => {
+      var result: any;
+      result = res;
+      result.forEach((element: { id: any; images: any; description: any; category: any; title: any; price: any; creationAt: any; updatedAt: any }) => {
+        this.todayDealItemList.push({
+          id: element.id,
+          images: element.images,
+          description: element.description,
+          category: element.category,
+          title: element.title,
+          price: element.price,
+          creationAt: element.creationAt,
+          updatedAt: element.updatedAt,
+          rating: 5
         })
       });
     });

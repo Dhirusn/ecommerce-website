@@ -136,10 +136,10 @@
                     </div>
                 </div>
                 <hr>
-                <div  class="featured-product-container">
-                    <div *ngFor="let item of featuredItemList" class="featured-item productContainer" id="{{item.itemId}}">
+                <div class="featured-product-container">
+                    <div *ngFor="let item of featuredItemList" class="featured-item productContainer" id="{{item.id}}">
                         <div class="featured-img p-2 productImageContainer">
-                            <img class="img-responsive" src="{{item.imgSrc}}" alt="images"
+                            <img class="img-responsive" src="{{item.images[0]}}" alt="images"
                                 style="width: 100%;">
                             <div class="productsImageButtons">
                                 <button class="add-to-cart" (click)="addToCart($event)"><i class="bi bi-bag-fill"></i></button>
@@ -148,10 +148,41 @@
                             </div>
                         </div>
                         <div class="featured-data text-center">
-                            <h5>{{item.itemTitle}}</h5>
-                            <h6 class="price">${{item.price}} <span class="regular-price">${{item.itemDiscountPrice}}</span></h6>
-                            <span style="--rating: {{item.itemRating}}"></span>
-                            <p class="product-detail">{{item.itemDetail}}</p>
+                            <h5>{{item.title}}</h5>
+                            <h6 class="price">${{item.price}} <span class="regular-price">${{item.price - 10}}</span></h6>
+                            <span style="--rating: {{item.rating}}"></span>
+                            <p class="product-detail">{{item.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="todays-deals">
+        <div class="container-lg">
+            <div class="row">
+                <div class="d-flex direction-row ">
+                    <h5>Today's best deal</h5> <span><a href="#"><h6>See More</h6></a></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="todays-deals-container">
+                    <div *ngFor="let item of todayDealItemList" class="featured-item productContainer" id="{{item.id}}">
+                        <div class="featured-img p-2 productImageContainer">
+                            <img class="img-responsive" src="{{item.images[0]}}" alt="images"
+                                style="width: 100%;">
+                            <div class="productsImageButtons">
+                                <button class="add-to-cart" (click)="addToCart($event)"><i class="bi bi-bag-fill"></i></button>
+                                <button class="add-to-wishlist"><i class="bi bi-heart-fill"></i></button>
+                                <button class="quick-view"><i class="bi bi-eye-fill"></i></button>
+                            </div>
+                        </div>
+                        <div class="featured-data text-center">
+                            <h5>{{item.title}}</h5>
+                            <h6 class="price">${{item.price}} <span class="regular-price">${{item.price - 10}}</span></h6>
+                            <span style="--rating: {{item.rating}}"></span>
+                            <p class="product-detail">{{item.description}}</p>
                         </div>
                     </div>
                 </div>
