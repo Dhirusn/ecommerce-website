@@ -1,83 +1,94 @@
 .sale {
-    position: absolute;
-    top: 1.5em;
-    left: 1.5em;
-    color: var(--ast-global-color-3);
-    background-color: var(--ast-global-color-5);
-    width: fit-content;
-    border-radius: 20px;
-    padding: 0.4em 0.8em;
-    font-size: .87em;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: normal;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.15);
-    opacity: 1;
-    visibility: visible;
-    z-index: 4;
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+  color: var(--ast-global-color-3);
+  background-color: var(--ast-global-color-5);
+  width: fit-content;
+  border-radius: 20px;
+  padding: 0.4em 0.8em;
+  font-size: .87em;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  visibility: visible;
+  z-index: 4;
 }
 
-.product-image-div{
-    position: relative;
+//image
+
+
+//image
+.product-image-div {
+  position: relative;
+  height: auto;
 }
 
-.product-title{
-    // font-size: 1.65rem;
-    line-height: 1.6;
+
+.product-title {
+  // font-size: 1.65rem;
+  line-height: 1.6;
 }
 
 .price {
-    color: #317ece;
-    font-size: 30px;
-    font-weight: 700;
+  color: #317ece;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .regular-price {
-    color: #999;
-    text-decoration: line-through;
-    font-size: 30px;
-    font-weight: 400;
-    margin-right: 18px;
-    vertical-align: bottom;
+  color: #999;
+  text-decoration: line-through;
+  font-size: 30px;
+  font-weight: 400;
+  margin-right: 18px;
+  vertical-align: bottom;
 }
 
-.shopping-buttons{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+.shopping-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .quantity {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
 .quantity__minus,
 .quantity__plus {
   display: block;
-  width: 22px;
-  height: 23px;
+  width: 30px;
+  height: 30px;
   margin: 0;
   background: #dee0ee;
   text-decoration: none;
   text-align: center;
   line-height: 23px;
 }
+
 .quantity__minus:hover,
 .quantity__plus:hover {
   background: #575b71;
   color: #fff;
 }
+
 .quantity__minus {
   border-radius: 3px 0 0 3px;
 }
+
 .quantity__plus {
   border-radius: 0 3px 3px 0;
 }
+
 .quantity__input {
   width: 32px;
-  height: 24px;
+  height: 30px;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -88,11 +99,114 @@
   background: #fff;
   color: #8184a1;
 }
+
 .quantity__minus:link,
 .quantity__plus:link {
   color: #8184a1;
 }
+
 .quantity__minus:visited,
 .quantity__plus:visited {
   color: #fff;
+}
+
+.blockreassurance_product {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+}
+
+.items-div {
+  border: 2px solid white;
+  padding: 1rem;
+}
+
+.blockreassurance_product .item-product {
+  display: inline-block;
+  height: 35px;
+  float: left;
+  margin-right: 5px;
+  padding-top: 5px;
+  width: 35px;
+}
+
+.blockreassurance_product .item-product svg {
+  padding-bottom: 15px;
+  width: 28px;
+}
+
+#product-details {
+  padding: 30px;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  padding: 2rem;
+  border: 1px solid #e5e5e5;
+}
+
+.product-manufacturer {
+  margin-bottom: 15px;
+}
+
+#product-details .label {
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+
+#product-details .label {
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+
+label,
+.label {
+  color: #000;
+  font-weight: 500;
+  text-align: right;
+}
+
+.product-quantities span {
+  color: #4cbb6c;
+  font-weight: 500;
+}
+
+.product-features h3 {
+  margin-right: 10px;
+  margin-bottom: 12px;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.product-features>dl.data-sheet dd.value,
+.product-features>dl.data-sheet dt.name {
+  width: 49%;
+  display: inline-table;
+  font-weight: 500;
+  background: #ebebeb;
+  padding: 10px 20px;
+  margin-right: 0;
+  min-height: 2.5rem;
+  word-break: break-all;
+  vertical-align: top;
+  color: #000;
+  border: 2px solid white
+}
+
+.product-features>dl.data-sheet dd.value {
+  margin-bottom: 3px;
+  font-weight: 400;
+}
+
+.product-description {
+  margin-top: 12px;
+  margin-bottom: 30px;
+  padding: 2rem;
+  border: 1px solid #e5e5e5;
 }
