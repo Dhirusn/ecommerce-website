@@ -8,5 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProductdetailComponent implements OnInit {
   public tablistButton: HTMLElement | undefined;
   ngOnInit(): void {
-}
+  }
+  incrementQuant() {
+
+  }
 }

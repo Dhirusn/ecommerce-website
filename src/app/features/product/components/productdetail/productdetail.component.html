@@ -18,16 +18,18 @@
                 </div>
                 <div class="product-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur voluptas perferendis cum saepe
-                    impedit, autem quasi sed quod veniam eveniet! Provident nihil perferendis totam iure.
+                    impedit, autem quasi sed quod veniam eveniet! Provident nihil perferendis totam iure. Lorem ipsum
+                    dolor sit, amet consectetur adipisicing elit. Molestias facilis ipsum nihil doloribus. Voluptas
+                    voluptatem similique, repellendus alias atque aspernatur et quia voluptates eligendi aperiam.
                 </div>
                 <div class="">
 
                 </div>
                 <div class="shopping-buttons mt-3">
                     <div class="quantity button-added">
-                        <a href="#" class="quantity__minus"><span>-</span></a>
-                        <input name="quantity" type="text" pattern='[0-9]{1,3}' class="quantity__input" value="1">
-                        <a href="#" class="quantity__plus"><span>+</span></a>
+                        <a href="#" class="quantity__minus" id="decrementQuant"><span>-</span></a>
+                        <input id="quantity" name="quantity" type="text" pattern='[0-9]{1,3}' class="quantity__input" value="1">
+                        <a href="#" class="quantity__plus" id="incrementQuant"><span>+</span></a>
                     </div>
                     <button class="btn btn-primary" id="add-to-cart">Add to Cart</button>
                     <a href="#">View cart</a>
@@ -112,7 +114,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <tabset type="pills">
                 <tab heading="Description">
                     <div class="product-description">
@@ -186,5 +188,8 @@
     </section>
     <section id="relatedSameCategoryItems">
         <app-related-product></app-related-product>
+    </section>
+    <section>
+        <app-same-category-product></app-same-category-product>
     </section>
 </div>

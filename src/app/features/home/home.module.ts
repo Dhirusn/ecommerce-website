@@ -4,12 +4,13 @@ import { HomeComponent } from './Pages/home.component';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeDataComponent } from './components/components/home-data/home-data.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 @NgModule({
   declarations: [HomeComponent,HomeDataComponent],
   imports: [
-    CommonModule,SharedModule,HttpClientModule
+    CommonModule,SharedModule,HttpClientModule,HomeRoutingModule
   ],
   exports:[HomeComponent,HomeDataComponent]
 })
