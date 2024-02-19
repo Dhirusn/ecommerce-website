@@ -4,7 +4,7 @@
     </div>
     <div class="featured-product-container " style="overflow-x: auto;">
         <div *ngFor="let item of relatedItemList" class="featured-item productContainer" id="{{item.id}}">
-            <div class="featured-img p-2 productImageContainer">
+            <div class="featured-img productImageContainer">
                 <img class="img-responsive" src="{{item.images[0]}}" alt="images" style="width: 100%;">
                 <div class="productsImageButtons">
                     <button class="add-to-cart"><i class="bi bi-bag-fill"></i></button>
@@ -12,10 +12,10 @@
                     <button class="quick-view"><i class="bi bi-eye-fill"></i></button>
                 </div>
             </div>
-            <div class="featured-data text-center">
-                <h5>{{item.title}}</h5>
-                <h6 class="actual-price">${{item.price}} <span class="regular-price">${{item.price - 10}}</span></h6>
-                <span style="--rating: {{item.rating}}"></span>
+            <div class="featured-data">
+                <a>{{item.title}}</a>
+                <span style="--rating: {{item.rating}}"></span><br>
+                <span class="actual-price">${{item.price}}<span class="regular-price">${{item.price - 10}}</span></span>
             </div>
         </div>
     </div>

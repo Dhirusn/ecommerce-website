@@ -175,7 +175,7 @@
                 <div class="todays-deals-container">
                     <div *ngFor="let item of todayDealItemList" class="featured-item productContainer" id="{{item.id}}">
                         <div class="featured-img p-2 productImageContainer">
-                            <a routerLink="/item">
+                            <a routerLink="/item/detail">
                                 <img class="img-responsive" src="{{item.images[0]}}" alt="images" style="width: 100%;">
                                 <div class="productsImageButtons">
                                     <button class="add-to-cart" (click)="addToCart($event)"><i
