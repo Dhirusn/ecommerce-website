@@ -22,7 +22,6 @@ export class HomeDataComponent implements OnInit {
     this.itemService.getFeaturedItems().subscribe(res => {
       var result: any;
       result = res;
-      console.log(result);
       result.forEach((element: { id: any; images: any; description: any; category: any; title: any; price: any; creationAt: any; updatedAt: any }) => {
         this.featuredItemList.push({
           id: element.id,

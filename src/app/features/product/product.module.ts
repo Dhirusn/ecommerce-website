@@ -6,8 +6,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RelatedProductComponent } from './components/related-product/related-product.component';
 import { SameCategoryProductComponent } from './components/same-category-product/same-category-product.component';
 import { ProductRoutingModule } from './product-routing.module';
+import { CartComponent } from './components/cart/cart.component';
 @NgModule({
-  declarations: [ProductdetailComponent,RelatedProductComponent,SameCategoryProductComponent],
+  declarations: [ProductdetailComponent,RelatedProductComponent,SameCategoryProductComponent,CartComponent],
   imports: [
     CommonModule, TooltipModule.forRoot(), TabsModule.forRoot(), ProductRoutingModule
   ],

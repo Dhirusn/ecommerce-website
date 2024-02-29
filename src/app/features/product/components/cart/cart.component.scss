@@ -1,0 +1,28 @@
+.blockreassurance_product {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+}
+
+.items-div {
+  border: 2px solid white;
+  padding: 1rem;
+}
+
+.blockreassurance_product .item-product {
+  display: inline-block;
+  height: 35px;
+  float: left;
+  margin-right: 5px;
+  padding-top: 5px;
+  width: 35px;
+}
+
+.blockreassurance_product .item-product svg {
+  padding-bottom: 15px;
+  width: 28px;
+}
+
+.billing {
+  line-height: 1.7;
+}
