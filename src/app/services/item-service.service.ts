@@ -16,7 +16,7 @@ export class ItemServiceService {
   constructor(private http: HttpClient) { }
 
   getFeaturedItems(){
-    return this.http.get(this.url + '?offset=0&limit=6');
+    return this.http.get(this.url + '?offset=0&limit=10');
   }
 
   getLatestProductItems(){

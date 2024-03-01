@@ -12,7 +12,6 @@
 .blockreassurance_product .item-product {
   display: inline-block;
   height: 35px;
-  float: left;
   margin-right: 5px;
   padding-top: 5px;
   width: 35px;
@@ -25,4 +24,32 @@
 
 .billing {
   line-height: 1.7;
+}
+
+.product-line-grid-left img {
+  max-width: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border: 1px solid #e5e5e5;
+}
+
+.product-line-grid-body>.product-line-info>.label {
+  padding: 0;
+  line-height: inherit;
+  text-align: left;
+  white-space: inherit;
+}
+.label {
+  color: #000;
+  font-weight: 500;
+  text-align: right;
+}
+a{
+  text-decoration: none;
+}
+
+.product-line-grid-right .bootstrap-touchspin {
+  width: 4.25rem;
 }
