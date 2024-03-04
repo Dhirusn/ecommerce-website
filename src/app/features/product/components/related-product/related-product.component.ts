@@ -20,7 +20,6 @@ export class RelatedProductComponent implements OnInit {
     this.itemService.getFeaturedItems().subscribe(res => {
       var result: any;
       result = res;
-      console.log(res);
       result.forEach((element: { id: any; images: any; description: any; category: any; title: any; price: any; creationAt: any; updatedAt: any }) => {
         this.relatedItemList.push({
           id: element.id,

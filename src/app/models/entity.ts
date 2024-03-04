@@ -1,7 +1,7 @@
 export enum Entity {
 }
 
-export class ItemModel {
+export interface ItemModel {
     creationAt :any;
     id: any;
     images: any;
@@ -9,11 +9,11 @@ export class ItemModel {
     price : any
     description:any;
     title: any;
-    category!: Category;
+    category: Category;
     rating : any;
 }
 
-export class Category{
+export interface Category{
     creationAt :any;
     id: any;
     image: any;

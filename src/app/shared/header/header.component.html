@@ -284,14 +284,14 @@
                     <input class="form-control" type="text" placeholder="Search" />
                 </form>
                 <div class="cart-detail">
-                    <button type="button" class="btn  position-relative">
+                    <button type="button" [routerLink]="['/item/cart']"  class="btn position-relative">
                         <i class="bi bi-bag"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                             99+
                             <span class="visually-hidden">unread messages</span>
                         </span>
                     </button>
-                    <span class="title_font text fw-bold">Cart: <span class="cart-total-top ps-2"> $0.00</span></span>
+                    <span class="title_font text fw-bold"><a routerLink="['/item/detail']">Cart:</a> <span class="cart-total-top ps-2"> $0.00</span></span>
                 </div>
             </div>
         </div>

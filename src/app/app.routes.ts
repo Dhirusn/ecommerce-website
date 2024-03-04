@@ -4,6 +4,9 @@ import { HomeComponent } from './features/home/Pages/home.component';
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
+        path:'user',loadChildren:()=> import('./features/user/user.module').then((m)=>m.UserModule),
+    },
+    {
         path: "home", loadChildren: () => import('../app/features/home/home.module').then((m) => m.HomeModule),
     },
     {

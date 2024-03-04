@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ItemModel } from '../../../../models/entity';
 import { ItemServiceService } from '../../../../services/item-service.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-cart',
@@ -9,19 +10,20 @@ import { ItemServiceService } from '../../../../services/item-service.service';
 })
 export class CartComponent implements OnInit {
   @Input() cartItemList: ItemModel[] = [];
+  @Input() cartItemList2: ItemModel[] = [];
 
   constructor(private itemService: ItemServiceService) { }
 
   ngOnInit(): void {
     this.addFeaturedItemList();
+    console.log(this.cartItemList);
   }
   addFeaturedItemList() {
     this.itemService.getFeaturedItems().subscribe(res => {
       var result: any;
       result = res;
-      console.log(res);
       result.forEach((element: { id: any; images: any; description: any; category: any; title: any; price: any; creationAt: any; updatedAt: any }) => {
-        this.cartItemList.push({
+        this.cartItemList2.push({
           id: element.id,
           images: element.images,
           description: element.description,
@@ -37,5 +39,13 @@ export class CartComponent implements OnInit {
   }
   deleteFromCart(){
     console.log("deleted");
+  }
+
+  addToCart(id: any) {
+    console.log("clicked");
+    this.itemService.getItembyId(id).subscribe((res:ItemModel) => {
+        this.cartItemList.push(res);
+        console.log(this.cartItemList);
+    });
   }
 }

@@ -31,7 +31,7 @@
                         <input id="quantity" name="quantity" type="number" pattern='[0-9]{1,3}' min="1" class="quantity__input" value="1">
                         <a href="javascript:void(0)" class="quantity__plus" (click)="incrementQuant()" id="incrementQuant"><span>+</span></a>
                     </div>
-                    <button class="btn btn-primary" (click)="addToCart()" id="add-to-cart">Add to Cart</button>
+                    <button class="btn btn-primary" (click)="addToCart(id)" id="add-to-cart">Add to Cart</button>
                     <a href="#">View cart</a>
                 </div>
                 <div class="mt-3">
