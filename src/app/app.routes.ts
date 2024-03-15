@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './features/home/Pages/home.component';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,5 +11,6 @@ export const routes: Routes = [
     },
     {
         path: "item", loadChildren: () => import('../app/features/product/product.module').then((m) => m.ProductModule),
-    }
+    },
+    { path: '**', component:ErrorPageComponent}
 ];
