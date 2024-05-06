@@ -1,55 +1,36 @@
-<div class="login-box">
-    <div class="container-lg border rounded my-4 p-5">
-        <div class="logo text-center">
-            <p>Ecommerce Web</p>
+<div class="container-fluid">
+    <div class="screen">
+        <div class="screen__content">
+            <form class="login">
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" placeholder="User name / Email">
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-lock"></i>
+                    <input type="password" class="login__input" placeholder="Password">
+                </div>
+                <a routerLink="/home">
+                    <button class="button login__submit">
+                        <span class="button__text">Log In Now</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>
+                </a>
+            </form>
+            <div class="social-login">
+                <h3>log in via</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-login__icon fab fa-instagram"></a>
+                    <a href="#" class="social-login__icon fab fa-facebook"></a>
+                    <a href="#" class="social-login__icon fab fa-twitter"></a>
+                </div>
+            </div>
         </div>
-        <form>
-            <div class="row">
-                <div class="col">
-                    <h3>Sign In</h3>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
-                        placeholder="Your Email Address" />
-                    <small id="emailHelpId" class="form-text text-muted">Please Enter the valid email</small>
-                </div>
-            </div>
-            <div class="row">
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rememberMe" />
-                        <label class="form-check-label" for="rememberMe"> Remember Me </label>
-                    </div>
-                </div>
-                <div class="col">
-                    <p>Forgot Your Password?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6 d-grid gap-2">
-                    <button type="button" [routerLink]="['/user/signup']" name="signIn" id="register" class="btn btn-secondary">
-                        Register
-                    </button>
-                </div>
-                <div class="col-6 d-grid gap-2">
-                    <button type="button"  name="signIn" id="signIn" class="btn btn-primary">
-                        Sign In
-                        <div class="d-none spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                          </div>
-                    </button>
-                </div>
-            </div>
-        </form>
+        <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+        </div>
     </div>
 </div>

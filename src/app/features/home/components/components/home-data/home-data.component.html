@@ -81,52 +81,103 @@
             <div class="hot-deals col-lg-4 col-sm-12">
                 <div class="hotdeals-heading">
                     <h5>HOT DEALS</h5>
-                    <div>
-                        <button>
-                            <i class="bi bi-arrow-left-square"></i>
-                        </button>
-                        <button>
-                            <i class="bi bi-arrow-right-square"></i>
-                        </button>
-                    </div>
                 </div>
                 <hr>
-                <div class="hotdeals-carousal">
-                    <div class="hotdeals-item" style="border: 2px solid blue;">
-                        <div class="hotdeals-img">
-                            <img class="img-responsive"
-                                src="../../../../../../assets/images/piscing-elitt-amet-ipiscing- 1.jpg" alt="images"
-                                style="width: 100%;">
-                            <span>New</span>
-                            <div class="product-buttons">
-                                <button class="add-to-cart" (click)="addToCart($event)"><i
-                                        class="bi bi-bag-fill h3"></i></button>
-                                <button class="add-to-wishlist"><i class="bi bi-heart-fill h3"></i></button>
-                                <button class="quick-view"><i class="bi bi-eye-fill h3"></i></button>
+                <div id="hotDealCarousel" class="carousel slide" data-bs-touch="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="hotdeals-carousal">
+                                <div class="hotdeals-item" style="border: 2px solid blue;">
+                                    <div class="hotdeals-img">
+                                        <img class="img-responsive"
+                                            src="../../../../../../assets/images/piscing-elitt-amet-ipiscing- 1.jpg"
+                                            alt="images" style="width: 100%;">
+                                        <span>New</span>
+                                        <div class="product-buttons">
+                                            <button class="add-to-cart" (click)="addToCart($event)"><i
+                                                    class="bi bi-bag-fill h3"></i></button>
+                                            <button class="add-to-wishlist"><i class="bi bi-heart-fill h3"></i></button>
+                                            <button class="quick-view"><i class="bi bi-eye-fill h3"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="hotdeal-data">
+                                        <h5>Pising elitt amet, ispiscing</h5>
+                                        <h6 class="price">$152 <span class="regular-price">$190</span></h6>
+                                        <span style="--rating:4"></span>
+                                        <p class="product-detail">Lorem ipsum dolor, sit amet consectetur adipisicing
+                                            elit.
+                                            Exercitationem maxime, iusto saepe
+                                            fuga numquam laborum? Dolore id recusandae magnam facere.</p>
+                                        <h6 class="mt-2">Hurry UP! Offer Ends In :</h6>
+                                        <div class="countdown">
+                                            <span class="item-countdown-time" data-time="2026-08-10 00:00:00">
+                                                <span class="section_cout">
+                                                    <span class="Days">922 </span>
+                                                    <span class="text">Days</span></span>
+                                                <span class="section_cout"><span class="Hours">12
+                                                    </span>
+                                                    <span class="text">Hours</span></span>
+                                                <span class="section_cout"><span class="Minutes">59 </span><span
+                                                        class="text">Mins</span></span><span class="section_cout"><span
+                                                        class="Seconds">18 </span><span
+                                                        class="text">Secs</span></span></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="hotdeal-data">
-                            <h5>Pising elitt amet, ispiscing</h5>
-                            <h6 class="price">$152 <span class="regular-price">$190</span></h6>
-                            <span style="--rating:4"></span>
-                            <p class="product-detail">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Exercitationem maxime, iusto saepe
-                                fuga numquam laborum? Dolore id recusandae magnam facere.</p>
-                            <h6 class="mt-2">Hurry UP! Offer Ends In :</h6>
-                            <div class="countdown">
-                                <span class="item-countdown-time" data-time="2026-08-10 00:00:00">
-                                    <span class="section_cout">
-                                        <span class="Days">922 </span>
-                                        <span class="text">Days</span></span>
-                                    <span class="section_cout"><span class="Hours">12
-                                        </span>
-                                        <span class="text">Hours</span></span>
-                                    <span class="section_cout"><span class="Minutes">59 </span><span
-                                            class="text">Mins</span></span><span class="section_cout"><span
-                                            class="Seconds">18 </span><span class="text">Secs</span></span></span>
+                        <div class="carousel-item">
+                            <div class="hotdeals-carousal">
+                                <div class="hotdeals-item" style="border: 2px solid blue;">
+                                    <div class="hotdeals-img">
+                                        <img class="img-responsive"
+                                            src="../../../../../../assets/images/piscing-elitt-amet-ipiscing- 1.jpg"
+                                            alt="images" style="width: 100%;">
+                                        <span>New</span>
+                                        <div class="product-buttons">
+                                            <button class="add-to-cart" (click)="addToCart($event)"><i
+                                                    class="bi bi-bag-fill h3"></i></button>
+                                            <button class="add-to-wishlist"><i class="bi bi-heart-fill h3"></i></button>
+                                            <button class="quick-view"><i class="bi bi-eye-fill h3"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="hotdeal-data">
+                                        <h5>Pising elitt amet, ispiscing</h5>
+                                        <h6 class="price">$152 <span class="regular-price">$190</span></h6>
+                                        <span style="--rating:4"></span>
+                                        <p class="product-detail">Lorem ipsum dolor, sit amet consectetur adipisicing
+                                            elit.
+                                            Exercitationem maxime, iusto saepe
+                                            fuga numquam laborum? Dolore id recusandae magnam facere.</p>
+                                        <h6 class="mt-2">Hurry UP! Offer Ends In :</h6>
+                                        <div class="countdown">
+                                            <span class="item-countdown-time" data-time="2026-08-10 00:00:00">
+                                                <span class="section_cout">
+                                                    <span class="Days">922 </span>
+                                                    <span class="text">Days</span></span>
+                                                <span class="section_cout"><span class="Hours">12
+                                                    </span>
+                                                    <span class="text">Hours</span></span>
+                                                <span class="section_cout"><span class="Minutes">59 </span><span
+                                                        class="text">Mins</span></span><span class="section_cout"><span
+                                                        class="Seconds">18 </span><span
+                                                        class="text">Secs</span></span></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#hotDealCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#hotDealCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
             <div class="featured col-lg-8 col-sm-12">
@@ -139,7 +190,7 @@
                 <div class="featured-product-container">
                     <div *ngFor="let item of featuredItemList" class="featured-item productContainer" id="{{item.id}}">
                         <div class="featured-img p-2 productImageContainer">
-                            <a [routerLink]="['/item/detail']" [queryParams]="{ id: item.id}">
+                            <a [routerLink]="['/item/detail',item.id]" >
                                 <img class="img-responsive" src="{{item.images[0]}}" alt="images" style="width: 100%;">
                                 <div class="productsImageButtons">
                                     <button class="add-to-cart" (click)="addToCart($event)"><i
@@ -175,7 +226,7 @@
                 <div class="todays-deals-container">
                     <div *ngFor="let item of todayDealItemList" class="featured-item productContainer" id="{{item.id}}">
                         <div class="featured-img p-2 productImageContainer">
-                            <a  [routerLink]="['/item/detail']" [queryParams]="{ id: item.id}">
+                            <a [routerLink]="['/item/detail']" [queryParams]="{ id: item.id}">
                                 <img class="img-responsive" src="{{item.images[0]}}" alt="images" style="width: 100%;">
                                 <div class="productsImageButtons">
                                     <button class="add-to-cart" (click)="addToCart($event)"><i

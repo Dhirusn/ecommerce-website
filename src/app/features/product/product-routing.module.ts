@@ -4,8 +4,9 @@ import { ProductdetailComponent } from './components/productdetail/productdetail
 import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
-  { path: 'detail', component: ProductdetailComponent },
-  { path: 'cart', component:CartComponent}
+  { path: 'detail/:id', component: ProductdetailComponent,runGuardsAndResolvers:'always' },
+  { path: 'cart', component:CartComponent},
+
 ];
 
 @NgModule({

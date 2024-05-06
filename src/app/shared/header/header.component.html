@@ -19,19 +19,16 @@
             </div>
             <div class="nav-right">
                 <div id="_desktop_user_info" class="mobile_links-wrapper">
-                    <div class="mobile_links dropdown js-dropdown">
+                    <div class="mobile_links dropdown" style="cursor: pointer;">
                         <span class="expand-more" data-toggle="dropdown" (click)="showMyAccount()"
                             aria-expanded="false"><i class="bi bi-person-fill"></i>My Account<i
                                 class="fa fa-caret-down"></i></span>
                         <ul class="dropdown-menu" id="myAccountDropdown" style="display: none;">
                             <li class="nav-item">
-                                <a href="https://demo.fieldthemes.com/techo/demo1/en/contact-us" title="Contact us"
-                                    rel="nofollow">Contact us</a>
+                                <a href="#" title="Contact us" rel="nofollow">Contact us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="link-myaccount"
-                                    href="https://demo.fieldthemes.com/techo/demo1/en/cart?action=show" title="My Cart"
-                                    rel="nofollow">
+                                <a class="link-myaccount" href="#" title="My Cart" rel="nofollow">
                                     My Cart
                                 </a>
                             </li>
@@ -137,7 +134,7 @@
             <div class="" id="collapsibleNavId">
                 <form class="d-flex my-2 my-lg-0">
                     <select name="category_filter" id="category_filter" class="form-control">
-                        <option value="0" selected="selected">All categories</option>
+                        <option value="0" selected="selected">All categories </option>
                         <option value="2">-- Home</option>
                         <option value="10">
                             ---- Chair
@@ -284,14 +281,15 @@
                     <input class="form-control" type="text" placeholder="Search" />
                 </form>
                 <div class="cart-detail">
-                    <button type="button" [routerLink]="['/item/cart']"  class="btn position-relative">
-                        <i class="bi bi-bag"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
-                            99+
-                            <span class="visually-hidden">unread messages</span>
-                        </span>
-                    </button>
-                    <span class="title_font text fw-bold"><a routerLink="['/item/detail']">Cart:</a> <span class="cart-total-top ps-2"> $0.00</span></span>
+                    <span class="title_font text fw-bold">
+                        <button type="button" [routerLink]="['/item/cart']" class="btn position-relative">
+                            <i class="bi bi-bag"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                                99+
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </button>
+                        <span class="cart-total-top ps-2"> $0.00</span></span>
                 </div>
             </div>
         </div>
@@ -317,44 +315,38 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-flex-start" id="collapsibleFooterNavId">
+                <div class="collapse navbar-collapse" id="collapsibleFooterNavId">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link" href="/home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Chair <i class="bi bi-caret-down"></i></a>
-                            <ul class="menu-items">
-                                <li class="menu-item"><a>Chair 2</a></li>
-                                <li class="menu-item"><a>Chair 3</a></li>
-                                <li class="menu-item"><a>Chair 4</a></li>
-                            </ul>
-                        </li>
+                        <li><a class="nav-link" [routerLink]="['/home']">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Computer</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Electronics <i
-                                    class="bi bi-caret-down"></i></a>
-                            <ul class="menu-items d-flex direction-row">
-                                <li class="menu-item">
-                                    <div class="title">
-                                        <h3>Cars</h3>
-                                    </div>
-                                    <ul>
-                                        <li class="menu-item"><a>Chair 3</a></li>
-                                        <li class="menu-item"><a>Chair 3</a></li>
-                                        <li class="menu-item"><a>Chair 3</a></li>
-                                        <li class="menu-item"><a>Chair 3</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item">
-                                    <div class="title">
-                                        <h3>Cars</h3>
-                                    </div>
-                                    <ul>
-                                        <li class="menu-item"><a>Car 3</a></li>
-                                        <li class="menu-item"><a>Car 4</a></li>
-                                        <li class="menu-item"><a>Car 5</a></li>
-                                        <li class="menu-item"><a>Car 6</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn position-relative">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="background: transparent;
+                                    border: none;">
+                                    <i class="bi bi-bag"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                                        9
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" [routerLink]="['/item/cart']">Go to cart</a></li>
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>

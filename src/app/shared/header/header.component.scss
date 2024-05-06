@@ -8,6 +8,18 @@
     height: 50px;
 }
 
+#header .header-nav .dropdown-menu {
+    z-index: 9999;
+    font-size: 14px;
+    padding: 0 !important;
+    border: 1px solid #ebebeb;
+    border-width: 0 1px 1px 1px;
+    top: 100%;
+    min-width: 130px;
+    left: auto;
+    right: 0;
+}
+
 #contact-link>ul {
     display: flex;
     justify-content: center;
@@ -19,12 +31,32 @@
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+}
 
-#header .header-nav .nav-right ul li {
+#myAccountDropdown {
+    padding: 0 !important;
+}
+#myAccountDropdown li{
     position: relative;
     line-height: 40px;
     border-bottom: 1px solid #ebebeb;
     transition: all 0.15s ease-in-out 0s;
+}
+#myAccountDropdown li a{
+    color: #999;
+    font-size: 13px;
+    padding: 0 15px;
+    display: block;
+}
+
+#myAccountDropdown li:hover{
+    background-color: #317ece;
+    display: block;
+    #myAccountDropdown li a{
+    color: white;
+    }
 }
 
 .header-nav .nav-right {
@@ -42,7 +74,7 @@ i {
     display: flex;
     justify-content: center;
     padding-right: 5vh;
-    margin: 3vh 0;
+    margin: 5vh 0;
 
 }
 
@@ -56,6 +88,7 @@ i {
     display: flex;
     padding: 0 55px;
     flex-basis: 140vh;
+
 }
 
 #collapsibleNavId>form {
@@ -71,6 +104,8 @@ i {
     min-width: 275px;
     width: 100%;
     padding: 0 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 #collapsibleNavId>form>select {
@@ -148,7 +183,7 @@ i {
     display: flex;
 }
 
-.menu-items{
+.menu-items {
     display: block;
     position: absolute;
     background: #fff;
@@ -164,53 +199,55 @@ i {
     z-index: 9999;
 }
 
-.menu-item{
-   list-style: none;
-   padding-top: 10px;
+.menu-item {
+    list-style: none;
+    padding-top: 10px;
 }
 
 
 
-.menu-item>a:hover{
+.menu-item>a:hover {
     cursor: pointer;
     color: black;
 }
 
-.nav-item:hover{
-    .menu-items{
+.nav-item:hover {
+    .menu-items {
         transform: scaleY(1);
         background-color: #317ece;
     }
 }
 
-.header-bottom{
+.header-bottom {
     padding: 0;
 }
-.header-bottom>.navbar>.container{
+
+.header-bottom>.navbar>.container {
     background-color: #317ece;
     padding: 0;
     border-radius: 11px;
 }
 
-.header-bottom>.navbar>.container>.navbar-brand{
+.header-bottom>.navbar>.container>.navbar-brand {
     background-color: black;
     color: white;
     font-size: 14px;
     font-weight: bold;
 }
 
-#collapsibleFooterNavId{
+#collapsibleFooterNavId {
     color: white !important;
     background-color: #317ece;
+    justify-content: space-between;
 }
 
-.nav-link{
+.nav-link {
     color: white;
     font-size: 16px;
     font-weight: bold;
 }
 
-.navbar-nav{
+.navbar-nav {
     padding-left: 20px;
     padding-right: 20px;
 }

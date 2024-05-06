@@ -2,23 +2,28 @@
     <div class="row">
         <h4>You Might Also Like</h4>
     </div>
-    <div class="featured-product-container " style="overflow-x: auto;">
-        <div *ngFor="let item of relatedItemList" class="featured-item productContainer" id="{{item.id}}">
-            <a  [routerLink]="['/item/detail']" [queryParams]="{ id: item.id}">
-                <div class="featured-img productImageContainer">
-                    <img class="img-responsive" src="{{item.images[0]}}" alt="images" style="width: 100%;">
-                    <div class="productsImageButtons">
-                        <button class="add-to-cart"><i class="bi bi-bag-fill"></i></button>
-                        <button class="add-to-wishlist"><i class="bi bi-heart-fill"></i></button>
-                        <button class="quick-view"><i class="bi bi-eye-fill"></i></button>
+    <owl-carousel-o *ngIf="relatedItemList" [options]="customOptions">
+        <ng-container  *ngFor="let item of relatedItemList">
+            <ng-template [id]="item.id" carouselSlide>
+                <div class="slide featured-item productContainer">
+                    <a [routerLink]="['/item/detail',item.id]">
+                        <div class="featured-img productImageContainer">
+                            <img class="img-responsive" [src]="item.images[0]" alt="images" style="width: 100%;">
+                            <div class="productsImageButtons">
+                                <button class="add-to-cart"><i class="bi bi-bag-fill"></i></button>
+                                <button class="add-to-wishlist"><i class="bi bi-heart-fill"></i></button>
+                                <button class="quick-view"><i class="bi bi-eye-fill"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="featured-data">
+                        <a>{{item.title}}</a>
+                        <span style="--rating: {{item.rating}}"></span><br>
+                        <span class="actual-price">${{item.price}}<span class="regular-price">${{item.price -
+                                10}}</span></span>
                     </div>
                 </div>
-            </a>
-            <div class="featured-data">
-                <a>{{item.title}}</a>
-                <span style="--rating: {{item.rating}}"></span><br>
-                <span class="actual-price">${{item.price}}<span class="regular-price">${{item.price - 10}}</span></span>
-            </div>
-        </div>
-    </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
 </div>

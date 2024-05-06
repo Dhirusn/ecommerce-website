@@ -53,17 +53,12 @@ export class HeaderComponent {
 
   showMyAccount() {
     const myAccountDropdown = document.getElementById('myAccountDropdown') as HTMLElement;
-    myAccountDropdown.style.display = myAccountDropdown.style.display == 'block' ? 'none' : 'block'
+    myAccountDropdown.style.display = myAccountDropdown.style.display == 'block' ? 'none' : 'block';
+    myAccountDropdown.style.transitionDuration = '3s'
   }
   allCategory() {
     const targetDiv = document.getElementById('allCategory-items') as HTMLElement;
-    if (targetDiv.style.transform == 'scaleY(0)') {
-      targetDiv.style.transform = 'scaleY(1)';
-      targetDiv.style.top = "66px"
-    } else {
-      targetDiv.style.transform = 'scaleY(0)';
-      targetDiv.style.top = "66px"
-
-    }
+    targetDiv.style.top = "66px"
+    targetDiv.style.transform = targetDiv.style.transform == 'scaleY(0)' ? targetDiv.style.transform = 'scaleY(1)' : targetDiv.style.transform = 'scaleY(0)';
   }
 }

@@ -1,26 +1,24 @@
 <div class="container mt-4">
     <section id="product-detail">
-        <div class="row">
+        <p *ngIf="!itemDetail">Loading data ...</p>
+        <div *ngIf="itemDetail" class="row">
             <div class="col-lg-6 col-sm-12">
                 <div class="product-image-div">
                     <img class="img-fluid"
-                        src="https://websitedemos.net/electronic-store-04/wp-content/uploads/sites/1055/2022/03/electronic-store-product-image-27.jpg"
+                        [src]="getSantizeUrl(itemDetail.images[0])"
                         alt="product-image">
                     <span class="sale">Sale</span>
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12">
                 <div>
-                    <h1 class="product-title">Product Tittle</h1>
+                    <h1 class="product-title">{{itemDetail.title}}</h1>
                 </div>
                 <div>
-                    <span class="regular-price">$49</span><span class="price">$44.00</span>
+                    <span class="regular-price">${{itemDetail.price+10}}</span><span class="price">${{itemDetail.price}}</span>
                 </div>
                 <div class="product-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur voluptas perferendis cum saepe
-                    impedit, autem quasi sed quod veniam eveniet! Provident nihil perferendis totam iure. Lorem ipsum
-                    dolor sit, amet consectetur adipisicing elit. Molestias facilis ipsum nihil doloribus. Voluptas
-                    voluptatem similique, repellendus alias atque aspernatur et quia voluptates eligendi aperiam.
+                    {{itemDetail.description}}
                 </div>
                 <div class="">
 
@@ -39,7 +37,7 @@
                 </div>
                 <hr>
                 <div>
-                    Category: <a href="#">Home appliances</a>
+                    Category: <a href="#">{{itemDetail.category.name}}</a>
                 </div>
                 <div class="blockreassurance_product">
                     <div class="bg-light items-div">
