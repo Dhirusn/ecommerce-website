@@ -1,1 +1,222 @@
-<p>user-profile works!</p>
+<div class="container">
+  <div class="row gx-4 py-4">
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 d-none d-md-block sidebar">
+      <ul class="nav flex-column">
+        <li *ngFor="let item of sidebarItems" class="nav-item mb-2">
+          <a class="nav-link d-flex align-items-center text-dark" [href]="item.route">
+            <i class="bi me-2" [ngClass]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+
+        <li class="nav-item mt-3">
+          <a class="text-danger nav-link small" href="#">
+            <i class="bi bi-trash me-2"></i> Delete Account
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-12 col-md-9 col-lg-10">
+      <h5 class="mb-3">PERSONAL DATA</h5>
+      <p class="text-muted">Enter your personal data so that you do not have to fill it in manually when placing an order.</p>
+
+      <!-- Personal Info Card -->
+      <div class="card rounded-3 p-3 mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="fw-bold">Personal Info</div>
+          <button class="btn btn-sm btn-link text-decoration-none" (click)="toggleSection('personal')">
+            <i class="bi" [ngClass]="showPersonalInfo ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </button>
+        </div>
+
+        <div [hidden]="!showPersonalInfo">
+          <form [formGroup]="profileForm">
+            <div class="row align-items-center">
+              <!-- Avatar -->
+              <div class="col-md-2 text-center">
+                <div class="avatar-wrapper mb-2">
+                  <img *ngIf="avatarPreview; else placeholder" [src]="avatarPreview" class="avatar rounded-circle" alt="avatar" />
+                  <ng-template #placeholder>
+                    <div class="avatar rounded-circle d-flex align-items-center justify-content-center bg-light text-secondary">
+                      <i class="bi bi-person" style="font-size:1.6rem"></i>
+                    </div>
+                  </ng-template>
+                </div>
+
+                <div class="d-flex gap-2 justify-content-center">
+                  <label class="btn btn-sm btn-outline-secondary mb-0">
+                    <i class="bi bi-pencil"></i>
+                    <input type="file" accept="image/*" hidden (change)="onAvatarSelected($event)" />
+                  </label>
+                  <button type="button" class="btn btn-sm btn-outline-danger mb-0" (click)="removeAvatar()">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Form fields -->
+              <div class="col-md-10">
+                <div class="row g-2">
+                  <div class="col-md-4">
+                    <label class="form-label small">First Name*</label>
+                    <input class="form-control form-control-sm rounded-pill" formControlName="firstName" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label class="form-label small">Second Name*</label>
+                    <input class="form-control form-control-sm rounded-pill" formControlName="secondName" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label class="form-label small">Nickname</label>
+                    <input class="form-control form-control-sm rounded-pill" formControlName="nickname" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label class="form-label small">Date of Birth</label>
+                    <input type="date" class="form-control form-control-sm rounded-pill" formControlName="dateOfBirth" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label class="form-label small">Gender</label>
+                    <select class="form-select form-select-sm rounded-pill" formControlName="gender">
+                      <option>Female</option>
+                      <option>Male</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label class="form-label small">Country</label>
+                    <select class="form-select form-select-sm rounded-pill" formControlName="country">
+                      <option>Ukraine</option>
+                      <option>India</option>
+                      <option>United States</option>
+                      <option>United Kingdom</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end gap-2 mt-3">
+                  <button type="button" class="btn btn-outline-secondary rounded-pill px-4" (click)="onCancelPersonal()">Cancel</button>
+                  <button type="button" class="btn btn-dark rounded-pill px-4" [disabled]="loading" (click)="onSavePersonal()">
+                    {{ loading ? 'Saving...' : 'Save Changes' }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Accordion-ish sections -->
+      <div class="accordion-section">
+        <div class="card mb-2 rounded-3">
+          <div class="card-body d-flex align-items-center py-2" role="button" (click)="toggleSection('security')">
+            <i class="bi bi-shield-lock me-3"></i>
+            <div class="flex-grow-1">Security</div>
+            <i class="bi" [ngClass]="showSecurity ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </div>
+          <div class="card-body border-top" *ngIf="showSecurity">
+            <form [formGroup]="profileForm">
+              <div class="row g-2">
+                <div class="col-md-4">
+                  <label class="form-label small">Current password</label>
+                  <input type="password" class="form-control form-control-sm rounded-pill" formControlName="currentPassword" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label small">New password</label>
+                  <input type="password" class="form-control form-control-sm rounded-pill" formControlName="newPassword" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label small">Confirm new password</label>
+                  <input type="password" class="form-control form-control-sm rounded-pill" formControlName="confirmNewPassword" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card mb-2 rounded-3">
+          <div class="card-body d-flex align-items-center py-2" (click)="toggleSection('contact')">
+            <i class="bi bi-envelope me-3"></i>
+            <div class="flex-grow-1">Contact Info</div>
+            <i class="bi" [ngClass]="showContactInfo ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </div>
+          <div class="card-body border-top" *ngIf="showContactInfo">
+            <form [formGroup]="profileForm">
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <label class="form-label small">Email</label>
+                  <input type="email" class="form-control form-control-sm rounded-pill" formControlName="email" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small">Phone</label>
+                  <input type="tel" class="form-control form-control-sm rounded-pill" formControlName="phone" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card mb-2 rounded-3">
+          <div class="card-body d-flex align-items-center py-2" (click)="toggleSection('delivery')">
+            <i class="bi bi-truck me-3"></i>
+            <div class="flex-grow-1">Delivery address</div>
+            <i class="bi" [ngClass]="showDelivery ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </div>
+          <div class="card-body border-top" *ngIf="showDelivery">
+            <div class="row g-2">
+              <div class="col-md-6">
+                <label class="form-label small">Address Line 1</label>
+                <input class="form-control form-control-sm rounded-pill" formControlName="addressLine1" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small">Address Line 2</label>
+                <input class="form-control form-control-sm rounded-pill" formControlName="addressLine2" />
+              </div>
+              <div class="col-md-4 mt-2">
+                <label class="form-label small">City</label>
+                <input class="form-control form-control-sm rounded-pill" formControlName="city" />
+              </div>
+              <div class="col-md-4 mt-2">
+                <label class="form-label small">State</label>
+                <input class="form-control form-control-sm rounded-pill" formControlName="state" />
+              </div>
+              <div class="col-md-4 mt-2">
+                <label class="form-label small">Zip Code</label>
+                <input class="form-control form-control-sm rounded-pill" formControlName="zipCode" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-2 rounded-3">
+          <div class="card-body d-flex align-items-center py-2" (click)="toggleSection('interests')">
+            <i class="bi bi-heart me-3"></i>
+            <div class="flex-grow-1">Interests</div>
+            <i class="bi" [ngClass]="showInterests ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </div>
+          <div class="card-body border-top" *ngIf="showInterests">
+            <textarea class="form-control form-control-sm rounded" formControlName="interests" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="card mb-2 rounded-3">
+          <div class="card-body d-flex align-items-center py-2" (click)="toggleSection('additional')">
+            <i class="bi bi-file-earmark-text me-3"></i>
+            <div class="flex-grow-1">Additional Info</div>
+            <i class="bi" [ngClass]="showAdditional ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </div>
+          <div class="card-body border-top" *ngIf="showAdditional">
+            <textarea class="form-control form-control-sm rounded" formControlName="additionalInfo" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>

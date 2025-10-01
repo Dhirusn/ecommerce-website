@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductdetailComponent } from './components/productdetail/productdetail.component';
-import { CartComponent } from './components/cart/cart.component';
+import { ProductdetailComponent } from './pages/productdetail/productdetail.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { authGuard } from '../../guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'detail/:id', component: ProductdetailComponent,runGuardsAndResolvers:'always' },
-  { path: 'cart', component:CartComponent},
+  { path: 'detail/:id', component: ProductdetailComponent, runGuardsAndResolvers: 'always' },
+  { path: 'cart', canActivate: [authGuard], component: CartComponent },
 
 ];
 
@@ -14,6 +15,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes)
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class ProductRoutingModule { }

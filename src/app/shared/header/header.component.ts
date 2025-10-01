@@ -1,5 +1,7 @@
-import { Component, EventEmitter, HostListener } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +11,46 @@ export class HeaderComponent {
   scrollEvent = new EventEmitter<boolean>();
   customStyle: any;
   defaultStyle: any;
+  isOpen = false;
+  isLoggedIn = false;
+  private sub = new Subscription();
 
+  constructor(private auth: AuthService, private el: ElementRef, private router: Router) { }
+
+  ngOnInit() {
+    this.sub.add(this.auth.isLoggedIn$.subscribe(v => (this.isLoggedIn = v)));
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+  close() {
+    this.isOpen = false;
+  }
+
+  goTo(path: string) {
+    this.close();
+    this.router.navigateByUrl(path);
+  }
+
+  onLogout() {
+    this.auth.logout();
+    this.close();
+    this.router.navigate(['/']); // redirect home or login
+  }
+
+  // close dropdown when clicking outside
+  @HostListener('document:click', ['$event.target'])
+  onDocumentClick(target: HTMLElement) {
+    if (!this.el.nativeElement.contains(target)) {
+      this.isOpen = false;
+    }
+  }
 
   updateStyle() {
     // Perform any logic to update the style dynamically

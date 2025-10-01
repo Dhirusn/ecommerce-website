@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './Pages/home.component';
+import { HomeComponent } from './pages/home.component';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeDataComponent } from './components/components/home-data/home-data.component';
 import { HttpClientModule } from '@angular/common/http';

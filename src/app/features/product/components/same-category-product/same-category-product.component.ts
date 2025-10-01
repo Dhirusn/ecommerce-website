@@ -20,18 +20,27 @@ export class SameCategoryProductComponent {
     this.itemService.getFeaturedItems().subscribe(res => {
       var result: any;
       result = res;
-      result.forEach((element: { id: any; images: any; description: any; category: any; title: any; price: any; creationAt: any; updatedAt: any }) => {
+      result.data.items.forEach((element: ItemModel) => {
         this.relatedItemList.push({
           id: element.id,
           images: element.images,
           description: element.description,
-          category: element.category,
+          categories: element.categories,
+          productCategories: element.productCategories,
           title: element.title,
           price: element.price,
-          creationAt: element.creationAt,
+          imageUrl: element.imageUrl,
+          stock: element.stock,
+          brandId: element.brandId,
+          brand: element.brand,
+          attributes: element.attributes,
+          productTags: element.productTags,
+          reviews: element.reviews,
+          createdAt: element.createdAt,
           updatedAt: element.updatedAt,
-          rating: 5
-        })
+          isDeleted: element.isDeleted,
+          rating: 5  // optional if you want a UI-only field
+        });
       });
     });
   }

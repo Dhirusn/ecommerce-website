@@ -12,16 +12,16 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ItemServiceService {
-  private url = "https://api.escuelajs.co/api/v1/products";
+  private url = "https://localhost:7260/products";
 
   constructor(private http: HttpClient) { }
 
   getItembyId(id: any){
-    return this.http.get<ItemModel>(this.url + `/${id}`);
+    return this.http.get<ItemModel>(this.url + `/GetById/${id}`);
   }
 
   getFeaturedItems(){
-    return this.http.get(this.url + '?offset=0&limit=10');
+    return this.http.get(this.url + '/getall');
   }
 
   getLatestProductItems(){

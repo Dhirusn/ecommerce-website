@@ -1,0 +1,47 @@
+:host {
+  .sidebar {
+    padding-left: 0;
+  }
+
+  .nav-link {
+    color: #333;
+    border-radius: 8px;
+  }
+
+  .nav-link:hover {
+    background: rgba(13,110,253,0.06);
+    color: #0d6efd;
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+  }
+
+  .avatar-wrapper .avatar {
+    border: 2px solid #fff;
+    box-shadow: 0 6px 16px rgba(13,110,253,0.08);
+  }
+
+  .card {
+    background: #ffffff;
+  }
+
+  .card-body[role="button"] {
+    cursor: pointer;
+  }
+
+  .rounded-pill {
+    border-radius: 999px !important;
+  }
+
+  /* subtle rounded border like screenshot */
+  .card.rounded-3 {
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .small {
+    font-size: 0.85rem;
+  }
+}

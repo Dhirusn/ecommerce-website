@@ -1,0 +1,65 @@
+<div class="card shadow-sm border-0 rounded-3 p-3">
+  <h4 class="fw-bold text-primary mb-3">Reviews</h4>
+
+  <!-- Overall Rating -->
+  <div class="d-flex align-items-center mb-4">
+    <div class="display-5 fw-bold text-primary">{{ overallRating }}</div>
+    <div class="ms-3">
+      <div class="text-warning">
+        <i class="bi bi-star-fill" *ngFor="let s of [].constructor(Math.floor(overallRating))"></i>
+        <i class="bi bi-star" *ngFor="let s of [].constructor(5 - Math.floor(overallRating))"></i>
+      </div>
+      <small class="text-muted">{{ totalRatings | number }} ratings</small>
+    </div>
+  </div>
+
+  <!-- Rating Breakdown -->
+  <div *ngFor="let r of ratingBreakdown" class="d-flex align-items-center mb-2">
+    <span class="me-2">{{ r.stars }}.0</span>
+    <div class="progress flex-grow-1">
+      <div class="progress-bar bg-primary" role="progressbar" [style.width.%]="(r.count / totalRatings) * 100">
+      </div>
+    </div>
+    <span class="ms-2 text-muted">{{ r.count | number }} reviews</span>
+  </div>
+
+  <!-- Category Scores -->
+  <div class="d-flex flex-wrap gap-2 my-4">
+    <span *ngFor="let cat of categories" class="badge rounded-pill bg-light text-dark border">
+      <span class="fw-bold text-primary">{{ cat.score }}</span> {{ cat.label }}
+    </span>
+  </div>
+
+  <!-- Individual Reviews -->
+  <div *ngFor="let review of visibleReviews" class="mb-4 border-top pt-3">
+    <div class="d-flex align-items-center mb-2">
+      <img [src]="review.avatar" class="rounded-circle me-2" width="40" height="40" />
+      <div>
+        <strong>{{ review.user }}</strong>
+        <div class="small text-muted">{{ review.date }}</div>
+      </div>
+      <div class="ms-auto text-primary fw-bold">
+        <div class="d-flex align-items-center text-warning">
+          <ng-container *ngFor="let star of [].constructor(5); let i = index">
+            <span>
+              {{ i < review.rating ? '★' : '☆' }} </span>
+          </ng-container>
+          <span class="ms-2 text-dark fw-semibold">{{ review.rating }} / 5</span>
+        </div>
+      </div>
+    </div>
+    <p class="mb-2">{{ review.comment }}</p>
+
+    <div *ngIf="review.images" class="d-flex gap-2">
+      <img *ngFor="let img of review.images" [src]="img" class="rounded shadow-sm" width="80" />
+    </div>
+  </div>
+
+  <!-- Read More -->
+  <!-- Read all reviews / Show less -->
+  <div class="text-center">
+    <a href="javascript:void(0)" class="text-primary fw-bold text-decoration-none" (click)="toggleShowAll()">
+      {{ showAll ? 'Show less reviews' : 'Read all reviews' }}
+    </a>
+  </div>
+</div>

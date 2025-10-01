@@ -18,39 +18,61 @@
                 </div>
             </div>
             <div class="nav-right">
-                <div id="_desktop_user_info" class="mobile_links-wrapper">
-                    <div class="mobile_links dropdown" style="cursor: pointer;">
-                        <span class="expand-more" data-toggle="dropdown" (click)="showMyAccount()"
-                            aria-expanded="false"><i class="bi bi-person-fill"></i>My Account<i
-                                class="fa fa-caret-down"></i></span>
-                        <ul class="dropdown-menu" id="myAccountDropdown" style="display: none;">
-                            <li class="nav-item">
-                                <a href="#" title="Contact us" rel="nofollow">Contact us</a>
+                <div class="mobile_links-wrapper position-relative">
+                    <div class="mobile_links" style="cursor: pointer;">
+                        <span class="expand-more d-inline-flex align-items-center" (click)="toggle()"
+                            >
+                            <i class="bi bi-person-fill me-2"></i>
+                            <span>My Account</span>
+                            <i class="fa fa-caret-down ms-2"></i>
+                        </span>
+
+                        <!-- dropdown -->
+                        <ul class="dropdown-menu p-2 shadow-sm" [class.show]="isOpen"
+                            [style.display]="isOpen ? 'block' : 'none'">
+                            <li *ngIf="isLoggedIn">
+                                <a class="dropdown-item" (click)="goTo('/u/profile')">Profile</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="link-myaccount" href="#" title="My Cart" rel="nofollow">
-                                    My Cart
-                                </a>
+
+                            <li *ngIf="isLoggedIn">
+                                <a class="dropdown-item" (click)="goTo('/orders')">Order History</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="number-btn-compare"
-                                    href="https://demo.fieldthemes.com/techo/demo1/en/module/fieldcompare/FieldCompareProduct"
-                                    title="My Compare" rel="nofollow">
-                                    <span>My Compare</span><strong class="total-compare-val"></strong>
-                                </a>
+
+                            <li *ngIf="isLoggedIn">
+                                <a class="dropdown-item" (click)="goTo('/item/cart')">My Cart</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="https://demo.fieldthemes.com/techo/demo1/en/my-account"
-                                    title="Log in to your customer account" rel="nofollow">
-                                    <span>Sign in</span>
-                                </a>
+
+                            <li *ngIf="isLoggedIn">
+                                <a class="dropdown-item" (click)="goTo('/wishlist')">Wishlist</a>
                             </li>
+
+                            <li *ngIf="isLoggedIn" class="dropdown-divider"></li>
+
+                            <li *ngIf="isLoggedIn">
+                                <a class="dropdown-item text-danger" (click)="onLogout()">Sign out</a>
+                            </li>
+
+                            <!-- anonymous view -->
+                            <ng-container *ngIf="!isLoggedIn">
+                                <li>
+                                    <a class="dropdown-item" (click)="goTo('/auth/login')">Sign in</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" (click)="goTo('/auth/register')">Create account</a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item" (click)="goTo('/contact')">Contact us</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" (click)="goTo('/item/cart')">My Cart</a>
+                                </li>
+                            </ng-container>
                         </ul>
                     </div>
                 </div>
-                <div class="wishlist_nav2_1">
-                    <a class="wishtlist_nav2"
-                        href="https://demo.fieldthemes.com/techo/demo1/en/module/fieldblockwishlist/mywishlist">
+                <!-- <div class="wishlist_nav2_1">
+                    <a class="wishtlist_nav2" routerLink="/item/wishlist">
                         <i class="bi bi-heart"></i>My wishlist
                     </a>
                 </div>
@@ -121,7 +143,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </nav>
@@ -334,7 +356,8 @@
                                     data-bs-toggle="dropdown" aria-expanded="false" style="background: transparent;
                                     border: none;">
                                     <i class="bi bi-bag"></i>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                                         9
                                         <span class="visually-hidden">unread messages</span>
                                     </span>

@@ -13,18 +13,19 @@ export const routes: Routes = [
         },
         children: [
             {
+                path: 'auth', loadChildren: () => import('./features/auth/auth.module').then((m) => m.AuthModule),
+            },
+            {
                 path: 'home', loadChildren: () => import('./features/home/home.module').then((m) => m.HomeModule),
             },
             {
-                path: 'user', loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
+                path: 'u', loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
             },
             {
                 path: "item", loadChildren: () => import('../app/features/product/product.module').then((m) => m.ProductModule),
-            },
+            }
         ]
     },
-    {
-        path: '', loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
-    },
+
     { path: '**', component: ErrorPageComponent }
 ];
