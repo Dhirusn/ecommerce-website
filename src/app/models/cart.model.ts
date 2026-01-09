@@ -15,6 +15,7 @@ export interface CreateCartDto {
  * Mirror of CartItemDto (C#)
  */
 export interface CartItemDto {
+  id:string;                   // Guid as string (cart item id)
   productId: string;           // Guid as string
   productName: string;
   productSku: string;

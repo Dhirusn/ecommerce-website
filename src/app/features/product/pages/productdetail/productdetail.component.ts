@@ -65,6 +65,7 @@ export class ProductdetailComponent implements OnInit {
     if (!this.product) return;
     var quantity = parseInt((<HTMLInputElement>document.getElementById("quantity")).value);
     const cartItem: CartItemDto = {
+      id: '', // empty, server will assign
       productId: this.product.id,
       productName: this.product.title,
       productSku: this.product.id, // assuming sku is same as id; replace if you have real sku

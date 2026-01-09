@@ -1,8 +1,9 @@
 // src/app/services/auth.service.ts
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { RegisterDto, LoginDto, RefreshDto, RevokeDto, AuthResponse } from '../models/auth';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,14 @@ export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject<boolean>(this.hasToken());
 
   public isLoggedIn$ = this._isLoggedIn$.asObservable();
-  constructor(private http: HttpClient) { }
-
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      this._isLoggedIn$.next(this.hasToken());
+    }
+  }
   register(model: RegisterDto): Observable<void> {
     return this.http.post<void>(`${this.apiUrl}/register`, model);
   }
@@ -26,6 +33,9 @@ export class AuthService {
   }
 
   private hasToken(): boolean {
+    // if (!isPlatformBrowser(this.platformId)) {
+    //   return false;
+    // }
     return !!localStorage.getItem(this.ACCESS_KEY);
   }
 

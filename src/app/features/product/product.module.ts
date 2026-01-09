@@ -10,8 +10,16 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { OrderComponent } from './pages/order/order.component';
 @NgModule({
-  declarations: [ProductdetailComponent, RelatedProductComponent, SameCategoryProductComponent, CartComponent, ReviewsComponent],
+  declarations: [
+    ProductdetailComponent,
+    RelatedProductComponent,
+    SameCategoryProductComponent,
+    CartComponent,
+    ReviewsComponent,
+    OrderComponent
+  ],
   imports: [
     CommonModule, TooltipModule.forRoot(), TabsModule.forRoot(), ProductRoutingModule, CarouselModule
   ],
