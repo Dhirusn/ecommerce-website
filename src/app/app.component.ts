@@ -9,7 +9,7 @@ import { setTheme } from 'ngx-bootstrap/utils';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HomeModule, HttpClientModule, SharedModule, ProductModule],
+  imports: [CommonModule, RouterOutlet, HomeModule, HttpClientModule, SharedModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [HttpClientModule]

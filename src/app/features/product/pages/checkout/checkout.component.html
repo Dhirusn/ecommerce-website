@@ -1,0 +1,203 @@
+<div class="checkout-container container py-5">
+    <div class="row g-5">
+
+        <!-- LEFT COLUMN: CHECKOUT FORM -->
+        <div class="col-lg-7">
+            <div class="mb-4">
+                <h2 class="fw-bold text-dark">Checkout</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="/" class="text-decoration-none text-muted">Home</a>
+                        </li>
+                        <li class="breadcrumb-item"><a routerLink="/cart"
+                                class="text-decoration-none text-muted">Cart</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()">
+
+                <!-- Contact Secion -->
+                <h5 class="section-title mb-3">Contact Information</h5>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                        formControlName="email"
+                        [class.is-invalid]="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched">
+                    <label for="email">Email address</label>
+                    <div class="invalid-feedback" *ngIf="checkoutForm.get('email')?.errors?.['required']">
+                        Email is required.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="checkoutForm.get('email')?.errors?.['email']">
+                        Please enter a valid email address.
+                    </div>
+                </div>
+
+                <!-- Shipping/Billing Address -->
+                <h5 class="section-title mt-4 mb-3">Shipping Address</h5>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                                formControlName="firstName"
+                                [class.is-invalid]="checkoutForm.get('firstName')?.invalid && checkoutForm.get('firstName')?.touched">
+                            <label for="firstName">First Name</label>
+                            <div class="invalid-feedback">First name is required.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                                formControlName="lastName"
+                                [class.is-invalid]="checkoutForm.get('lastName')?.invalid && checkoutForm.get('lastName')?.touched">
+                            <label for="lastName">Last Name</label>
+                            <div class="invalid-feedback">Last name is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="address" placeholder="Address"
+                                formControlName="address"
+                                [class.is-invalid]="checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched">
+                            <label for="address">Address</label>
+                            <div class="invalid-feedback">Address is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <select class="form-select" id="country" formControlName="country"
+                                [class.is-invalid]="checkoutForm.get('country')?.invalid && checkoutForm.get('country')?.touched">
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="CA">Canada</option>
+                                <option value="IN">India</option>
+                                <option value="Nepal">Nepal</option>
+                            </select>
+                            <label for="country">Country</label>
+                            <div class="invalid-feedback">Please select a country.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="city" placeholder="City" formControlName="city"
+                                [class.is-invalid]="checkoutForm.get('city')?.invalid && checkoutForm.get('city')?.touched">
+                            <label for="city">City</label>
+                            <div class="invalid-feedback">City is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="state" placeholder="State"
+                                formControlName="state"
+                                [class.is-invalid]="checkoutForm.get('state')?.invalid && checkoutForm.get('state')?.touched">
+                            <label for="state">State</label>
+                            <div class="invalid-feedback">State is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="postalCode" placeholder="Zip"
+                                formControlName="postalCode">
+                            <label for="postalCode">Postal Code (Optional)</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="phone" placeholder="Phone"
+                                formControlName="phone">
+                            <label for="phone">Phone (Optional)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <label for="notes" class="form-label text-muted">Order Notes (Optional)</label>
+                    <textarea class="form-control" id="notes" rows="3" formControlName="notes"
+                        placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                </div>
+
+                <div class="alert alert-danger mt-4" *ngIf="errorMessage">
+                    <i class="bi bi-exclamation-circle-fill me-2"></i> {{ errorMessage }}
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-100 mt-4 py-3 fw-bold shadow-sm"
+                    [disabled]="isProcessing || checkoutForm.invalid">
+                    <span *ngIf="isProcessing" class="spinner-border spinner-border-sm me-2" role="status"
+                        aria-hidden="true"></span>
+                    {{ isProcessing ? 'Processing Order...' : 'Place Order' }}
+                </button>
+
+            </form>
+        </div>
+
+        <!-- RIGHT COLUMN: ORDER SUMMARY -->
+        <div class="col-lg-5">
+            <div class="card border-0 shadow-sm rounded-4 bg-light">
+                <div class="card-body p-4">
+                    <h5 class="card-title fw-bold mb-4">Order Summary</h5>
+
+                    <div class="d-flex flex-column gap-3 mb-4">
+                        <div *ngFor="let item of cartItems"
+                            class="d-flex align-items-center bg-white p-2 rounded shadow-sm">
+                            <div class="position-relative me-3">
+                                <img [src]="item.productImageUrl || 'assets/placeholder.png'"
+                                    class="rounded object-fit-cover" width="60" height="60"
+                                    alt="{{ item.productName }}">
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                                    {{ item.quantity }}
+                                </span>
+                            </div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="mb-0 text-truncate">{{ item.productName }}</h6>
+                                <small class="text-muted">{{ item.unitPrice | currency }} each</small>
+                            </div>
+                            <span class="fw-semibold">{{ (item.unitPrice * item.quantity) | currency }}</span>
+                        </div>
+                    </div>
+
+                    <div *ngIf="cartItems.length === 0" class="text-center text-muted py-3">
+                        Your cart is empty.
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">Subtotal</span>
+                        <span class="fw-bold">{{ subtotal | currency }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-muted">Shipping</span>
+                        <span class="text-success">Free</span>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fs-5 fw-bold">Total</span>
+                        <div class="text-end">
+                            <span class="fs-4 fw-bold text-primary">{{ total | currency }}</span>
+                            <div class="small text-muted">Including taxes</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <p class="small text-muted">
+                    <i class="bi bi-shield-lock-fill me-1"></i> Secure Checkout
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -20,8 +20,7 @@
             <div class="nav-right">
                 <div class="mobile_links-wrapper position-relative">
                     <div class="mobile_links" style="cursor: pointer;">
-                        <span class="expand-more d-inline-flex align-items-center" (click)="toggle()"
-                            >
+                        <span class="expand-more d-inline-flex align-items-center" (click)="toggle()">
                             <i class="bi bi-person-fill me-2"></i>
                             <span>My Account</span>
                             <i class="fa fa-caret-down ms-2"></i>
@@ -35,7 +34,7 @@
                             </li>
 
                             <li *ngIf="isLoggedIn">
-                                <a class="dropdown-item" (click)="goTo('/orders')">Order History</a>
+                                <a class="dropdown-item" (click)="goTo('/u/orders')">Order History</a>
                             </li>
 
                             <li *ngIf="isLoggedIn">

@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UserProfileComponent {
   sidebarItems = [
     { label: 'Profile', icon: 'bi-person', route: '#' },
-    { label: 'Order History', icon: 'bi-clock-history', route: '#' },
+    { label: 'Order History', icon: 'bi-clock-history', route: '/u/orders' },
     { label: 'My Reviews', icon: 'bi-chat-left-text', route: '#' },
     { label: 'Personal Offers', icon: 'bi-gift', route: '#' },
     { label: 'Discounts and Bonuses', icon: 'bi-ticket-perforated', route: '#' },

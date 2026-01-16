@@ -11,6 +11,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { OrderComponent } from './pages/order/order.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { PaymentProcessingComponent } from './pages/payment-processing/payment-processing.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ProductdetailComponent,
@@ -18,10 +21,12 @@ import { OrderComponent } from './pages/order/order.component';
     SameCategoryProductComponent,
     CartComponent,
     ReviewsComponent,
-    OrderComponent
+    OrderComponent,
+    CheckoutComponent,
+    PaymentProcessingComponent
   ],
   imports: [
-    CommonModule, TooltipModule.forRoot(), TabsModule.forRoot(), ProductRoutingModule, CarouselModule
+    CommonModule, TooltipModule.forRoot(), TabsModule.forRoot(), ProductRoutingModule, CarouselModule, FormsModule, ReactiveFormsModule
   ],
   exports: [ProductdetailComponent, RelatedProductComponent, SameCategoryProductComponent]
 })
