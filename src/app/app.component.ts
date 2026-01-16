@@ -4,12 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { HomeModule } from './features/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { ProductModule } from './features/product/product.module';
 import { setTheme } from 'ngx-bootstrap/utils';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HomeModule, HttpClientModule, SharedModule],
+  imports: [CommonModule, RouterOutlet, HttpClientModule, SharedModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [HttpClientModule]
